@@ -1,0 +1,55 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #00aaff, #00ff77);
+  overflow: hidden;
+  text-align: center;
+}
+
+.calculator-grid {
+  display: grid;
+  min-height: 100vh;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 120px);
+  grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+}
+.calculator-grid>button {
+  font-weight: 500;
+  font-size: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 255, 255, 0.75);
+}
+.calculator-grid>button:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+.calculator-grid>button.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 9px;
+  margin: 2px 0;
+}
+.output .previous-oparand {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.125rem;
+}
+.output .current-oparand {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+}
