@@ -9,6 +9,8 @@ class Calculator {
     this.currentOperand = "";
     this.previousOperand = "";
     this.operation = undefined;
+    this.previousOperandTextField.innerText = '';
+    this.currentOperandTextField.innerText = '';
   }
 
   delete() {
@@ -50,4 +52,6 @@ numberButtons.forEach(button => {
     calculator.appendNumber(button.innerText);
     calculator.updateDisplay();
   })
-})
+});
+
+allClearButton.addEventListener('click', () => calculator.clear());
